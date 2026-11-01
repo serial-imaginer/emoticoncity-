@@ -5,14 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emoticon City</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: #0f1115;
-      color: #f3f4f6;
+      background-color: #122823;
+      color: #ffffff;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       min-height: 100vh;
       display: flex;
@@ -20,217 +16,71 @@
       align-items: center;
       padding: 60px 20px 40px;
     }
-
-    header {
-      text-align: center;
-      margin-bottom: 50px;
-      max-width: 800px;
-    }
-
-    .welcome {
-      font-size: 1.1rem;
-      font-weight: 500;
-      letter-spacing: 2px;
-      color: #9ca3af;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .brand-title {
-      font-size: 3rem;
-      font-weight: 800;
-      color: #10b981;
-      margin-bottom: 16px;
-      letter-spacing: -0.5px;
-    }
-
-    .sub-title {
-      font-size: 1.25rem;
-      color: #e5e7eb;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .author-sub {
-      font-size: 0.95rem;
-      color: #6b7280;
-      line-height: 1.5;
-    }
-
-    main {
-      width: 100%;
-      max-width: 1100px;
-    }
-
+    header { text-align: center; margin-bottom: 45px; max-width: 800px; }
+    .welcome { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; color: #ffffff; }
+    .brand-title { font-size: 3.2rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -0.5px; line-height: 1.1; }
+    .part-emoticon { color: #10b981; }
+    .part-city { color: #a855f7; }
+    .sub-title { font-size: 1.2rem; color: #ffffff; font-weight: 600; margin-bottom: 24px; }
+    .author-sub-ko { font-size: 0.95rem; color: #9ca3af; margin-bottom: 4px; }
+    .author-sub-en { font-size: 0.95rem; color: #9ca3af; font-weight: 600; }
+    main { width: 100%; max-width: 530px; }
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 80px 60px;
       margin-bottom: 60px;
     }
-
-    .card {
-      background-color: #1a1d24;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid #2d3139;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      display: flex;
-      flex-direction: column;
+    @media (max-width: 600px) {
+      .card-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
     }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
-      border-color: #10b981;
-    }
-
-    .book-img-wrapper {
-      width: 100%;
-      aspect-ratio: 5 / 8;
-      overflow: hidden;
-      background-color: #12141a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .book-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .card:hover .book-img-wrapper img {
-      transform: scale(1.04);
-    }
-
+    .card { display: flex; justify-content: center; align-items: center; }
+    .book-img { width: 100%; height: auto; display: block; border-radius: 2px; }
     footer {
       margin-top: auto;
       width: 100%;
-      max-width: 1100px;
+      max-width: 900px;
       padding-top: 40px;
-      border-top: 1px solid #2d3139;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 20px;
     }
-
-    .qr-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .qr-card {
-      width: 160px;
-      height: 160px;
-      background-color: #ffffff;
-      padding: 10px;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .qr-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .qr-text {
-      font-size: 0.85rem;
-      color: #9ca3af;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    .footer-info {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #6b7280;
-    }
-
-    .footer-info a {
-      color: #9ca3af;
-      text-decoration: none;
-    }
-
-    .footer-info a:hover {
-      color: #10b981;
-    }
+    .qr-section { display: flex; justify-content: center; align-items: center; }
+    .qr-img { width: 120px; height: auto; display: block; }
+    .footer-info { text-align: center; font-size: 0.85rem; color: #6b7280; line-height: 1.6; }
+    .footer-info a { color: #6b7280; text-decoration: none; }
   </style>
 </head>
 <body>
-
   <header>
     <p class="welcome">Welcome to</p>
-    <h1 class="brand-title">Emoticon City</h1>
+    <h1 class="brand-title">
+      <span class="part-emoticon">Emoticon</span> <span class="part-city">City</span>
+    </h1>
     <p class="sub-title">‘하루 한 문장’만 허용되는 이모티콘시티로 초대합니다!</p>
-    <p class="author-sub">오케이 백 &lt;이모티콘시티의 주민들&gt; 시리즈<br>Residents of Emoticon City Series by OK PAEK</p>
+    <p class="author-sub-ko">오케이 백 &lt;이모티콘시티의 주민들&gt; 시리즈</p>
+    <p class="author-sub-en">Residents of Emoticon City Series by OK PAEK</p>
   </header>
-
   <main>
     <div class="card-grid">
-      <!-- 카드 1 -->
-      <div class="card">
-        <div class="book-img-wrapper">
-          <img src="images/cover-1.jpg" alt="Residents of Emoticon City">
-        </div>
-      </div>
-
-      <!-- 카드 2 -->
-      <div class="card">
-        <div class="book-img-wrapper">
-          <img src="images/cover-2.jpg" alt="The Mystery of the Black Cat">
-        </div>
-      </div>
-
-      <!-- 카드 3 -->
-      <div class="card">
-        <div class="book-img-wrapper">
-          <img src="images/cover-3.jpg" alt="Cloud Hair and the Runaway Cake">
-        </div>
-      </div>
-
-      <!-- 카드 4 -->
-      <div class="card">
-        <div class="book-img-wrapper">
-          <img src="images/cover-4.jpg" alt="Pink Sticky's Cheerful Day">
-        </div>
-      </div>
-
-      <!-- 카드 5 -->
-      <div class="card">
-        <div class="book-img-wrapper">
-          <img src="images/cover-5.jpg" alt="The Free Spirits of Emoticon City">
-        </div>
-      </div>
-
-      <!-- 카드 6 (작가 프로필) -->
-      <div class="card">
-        <div class="book-img-wrapper">
-          <img src="images/cover-author.jpg" alt="OK PAEK Author Profile">
-        </div>
-      </div>
+      <div class="card"><img class="book-img" src="images/cover-1.jpg" alt="Cover 1"></div>
+      <div class="card"><img class="book-img" src="images/cover-2.jpg" alt="Cover 2"></div>
+      <div class="card"><img class="book-img" src="images/cover-3.jpg" alt="Cover 3"></div>
+      <div class="card"><img class="book-img" src="images/cover-4.jpg" alt="Cover 4"></div>
+      <div class="card"><img class="book-img" src="images/cover-5.jpg" alt="Cover 5"></div>
+      <div class="card"><img class="book-img" src="images/cover-author.jpg" alt="Author"></div>
     </div>
   </main>
-
   <footer>
     <div class="qr-section">
-      <div class="qr-card">
-        <img src="images/qrcode.jpg" alt="QR Code">
-      </div>
-      <p class="qr-text">Welcome to Emoticon City<br>OK PAEK</p>
+      <img class="qr-img" src="images/qrcode.jpg" alt="QR Code">
     </div>
-
     <div class="footer-info">
       <p>&copy; 2026. OK PAEK All Rights Reserved.</p>
       <p><a href="mailto:okpaek.art@gmail.com">okpaek.art@gmail.com</a></p>
     </div>
   </footer>
-
 </body>
 </html>
