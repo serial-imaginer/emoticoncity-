@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoticon City</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0d1210; /* 시안의 어두운 다크 그린 배경 */
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 20px 40px 20px;
+        }
+
+        /* 헤더 레이아웃 */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .welcome {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .brand-title {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #10b981; /* 시안의 네온 그린 포인트 컬러 */
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        .sub-heading {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #ffffff;
+        }
+        .author-desc {
+            font-size: 1rem;
+            color: #9ca3af;
+            line-height: 1.5;
+        }
+
+        /* 3열 카드 그리드 레이아웃 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 960px;
+            width: 100%;
+            margin-bottom: 60px;
+        }
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 카드 아이템 스타일 */
+        .card-link {
+            display: block;
+            text-decoration: none;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            background-color: #1a231f;
+        }
+        .card-link:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+        }
+
+        /* 1600x2560 (10:16) 비율 유지 */
+        .book-img-wrapper {
+            width: 100%;
+            aspect-ratio: 1600 / 2560;
+            overflow: hidden;
+            background-color: #27352f;
+        }
+        .book-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 1:1 정사각형 비율 유지 (작가 프로필 카드가 1:1일 경우) */
+        .square-img-wrapper {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            background-color: #27352f;
+        }
+        .square-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 푸터 및 QR코드 레이아웃 */
+        footer {
+            width: 100%;
+            max-width: 960px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .qr-section {
+            width: 110px;
+            text-align: center;
+        }
+        .qr-img-wrapper {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* 정사각형 비율 */
+            margin-bottom: 6px;
+        }
+        .qr-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .qr-text {
+            font-size: 0.65rem;
+            color: #9ca3af;
+            line-height: 1.2;
+        }
+        .footer-info {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        .footer-info a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 타이틀 영역 -->
+    <header>
+        <div class="welcome">Welcome to</div>
+        <h1 class="brand-title">Emoticon City</h1>
+        <div class="sub-heading">‘하루 한 문장’만 허용되는 이모티콘시티로 초대합니다!</div>
+        <div class="author-desc">
+            오케이 백 &lt;이모티콘시티의 주민들&gt; 시리즈<br>
+            Residents of Emoticon City Series by OK PAEK
+        </div>
+    </header>
+
+    <!-- 6개 카드 영역 (10:16 비율) -->
+    <main class="grid-container">
+        
+        <!-- 카드 1 -->
+        <a href="아마존_링크_1" target="_blank" class="card-link">
+            <div class="book-img-wrapper">
+                <img src="./images/cover1.jpg" alt="Residents of Emoticon City">
+            </div>
+        </a>
+
+        <!-- 카드 2 -->
+        <a href="아마존_링크_2" target="_blank" class="card-link">
+            <div class="book-img-wrapper">
+                <img src="./images/cover2.jpg" alt="The Mystery of the Black Cat">
+            </div>
+        </a>
+
+        <!-- 카드 3 -->
+        <a href="아마존_링크_3" target="_blank" class="card-link">
+            <div class="book-img-wrapper">
+                <img src="./images/cover3.jpg" alt="Cloud Hair and the Runaway Cake">
+            </div>
+        </a>
+
+        <!-- 카드 4 -->
+        <a href="아마존_링크_4" target="_blank" class="card-link">
+            <div class="book-img-wrapper">
+                <img src="./images/cover4.jpg" alt="Pink Sticky's Cheerful Day">
+            </div>
+        </a>
+
+        <!-- 카드 5 -->
+        <a href="아마존_링크_5" target="_blank" class="card-link">
+            <div class="book-img-wrapper">
+                <img src="./images/cover5.jpg" alt="The Free Spirits of Emoticon City">
+            </div>
+        </a>
+
+        <!-- 카드 6 (작가 프로필 카드가 10:16 비율인 경우 book-img-wrapper 사용, 정사각형일 경우 square-img-wrapper 사용) -->
+        <a href="아마존_작가프로필_링크" target="_blank" class="card-link">
+            <div class="book-img-wrapper">
+                <img src="./images/author_profile.jpg" alt="OK PAEK Author Profile">
+            </div>
+        </a>
+
+    </main>
+
+    <!-- 하단 푸터 및 QR코드 (1:1 비율) -->
+    <footer>
+        <div class="qr-section">
+            <div class="qr-img-wrapper">
+                <img src="./images/qrcode.png" alt="Welcome to Emoticon City QR Code">
+            </div>
+            <div class="qr-text">Welcome to Emoticon City<br>OK PAEK</div>
+        </div>
+        <div class="footer-info">
+            <p>&copy; 2025. OK PAEK All Rights Reserved.</p>
+            <p><a href="mailto:okpaek.art@gmail.com">okpaek.art@gmail.com</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
