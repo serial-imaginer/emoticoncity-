@@ -1,130 +1,130 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emoticon City</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background-color: #122823;
-      color: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 20px 40px;
-    }
-    header { text-align: center; margin-bottom: 45px; max-width: 800px; }
-    .welcome { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; color: #ffffff; }
-    .brand-title { font-size: 3.2rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -0.5px; line-height: 1.1; }
-    .part-emoticon { color: #7EFB4F; }
-    .part-city { color: #A133F5; }
-    .sub-title { font-size: 1.2rem; color: #ffffff; font-weight: 600; margin-bottom: 24px; }
-    .author-sub-ko { font-size: 0.95rem; color: #9ca3af; margin-bottom: 4px; font-weight: 700; }
-    .author-sub-en { font-size: 0.95rem; color: #9ca3af; font-weight: 600; }
-    main { width: 100%; max-width: 530px; }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 80px 60px;
-      margin-bottom: 60px;
-    }
-    @media (max-width: 600px) {
-      .card-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
-    }
-    .card { display: flex; justify-content: center; align-items: center; }
-    .card a { display: block; width: 100%; }
-    .book-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 2px;
-      transition: transform 0.3s ease;
-    }
-    .book-img:hover {
-      transform: scale(1.1);
-    }
-    footer {
-      margin-top: auto;
-      width: 100%;
-      max-width: 900px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-    .qr-section { display: flex; justify-content: center; align-items: center; }
-    .qr-img {
-      width: 120px;
-      height: auto;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .qr-img:hover {
-      transform: scale(1.1);
-    }
-    .footer-info { text-align: center; font-size: 0.85rem; color: #6b7280; line-height: 1.6; }
-    .footer-info a { color: #6b7280; text-decoration: none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emoticon City</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+background-color: #122823;
+color: #ffffff;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 60px 20px 40px;
+}
+header { text-align: center; margin-bottom: 45px; max-width: 800px; }
+.welcome { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; color: #ffffff; }
+.brand-title { font-size: 3.2rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -0.5px; line-height: 1.1; }
+.part-emoticon { color: #7EFB4F; }
+.part-city { color: #A133F5; }
+.sub-title { font-size: 1.2rem; color: #ffffff; font-weight: 600; margin-bottom: 24px; }
+.author-sub-ko { font-size: 0.95rem; color: #9ca3af; margin-bottom: 4px; font-weight: 700; }
+.author-sub-en { font-size: 0.95rem; color: #9ca3af; font-weight: 600; }
+main { width: 100%; max-width: 530px; }
+.card-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 80px 60px;
+margin-bottom: 60px;
+}
+@media (max-width: 600px) {
+.card-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
+}
+.card { display: flex; justify-content: center; align-items: center; }
+.card a { display: block; width: 100%; }
+.book-img {
+width: 100%;
+height: auto;
+display: block;
+border-radius: 2px;
+transition: transform 0.3s ease;
+}
+.book-img:hover {
+transform: scale(1.1);
+}
+footer {
+margin-top: auto;
+width: 100%;
+max-width: 900px;
+padding-top: 40px;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+}
+.qr-section { display: flex; justify-content: center; align-items: center; }
+.qr-img {
+width: 120px;
+height: auto;
+display: block;
+transition: transform 0.3s ease;
+}
+.qr-img:hover {
+transform: scale(1.1);
+}
+.footer-info { text-align: center; font-size: 0.85rem; color: #6b7280; line-height: 1.6; }
+.footer-info a { color: #6b7280; text-decoration: none; }
+</style>
 </head>
 <body>
-  <header>
-    <p class="welcome">Welcome to</p>
-    <h1 class="brand-title">
-      <span class="part-emoticon">Emoticon</span> <span class="part-city">City</span>
-    </h1>
-    <p class="sub-title">‘하루 한 문장’만 허용되는 도시, 이모티콘시티로 초대합니다!</p>
-    <p class="author-sub-ko">오케이 백 &lt;이모티콘시티의 주민들&gt; 시리즈</p>
-    <p class="author-sub-en">Residents of Emoticon City Series by OK PAEK</p>
-  </header>
-  <main>
-    <div class="card-grid">
-      <div class="card">
-        <a href="https://www.amazon.com/dp/B0DHT5MKTQ?ref_=ast_author_dp_aw&amp;th=1&amp;psc=1&amp;dib=eyJ2IjoiMSJ9.Jm6c-F4-5WHfsSwRqss0Gzpsp_-7WbUFEz5wPYTdhEQC9Co_vsrbq2gQP8nv2H8SOCAhkwv9eDawbWbjGuTToA.5Zvx5oOBmG-C-UfPiFlwU2b7ZgINWm8QdDgUOqrf2yM&amp;dib_tag=AUTHOR" target="_blank" rel="noopener noreferrer">
-          <img class="book-img" src="images/cover-1.jpg" alt="Cover 1">
-        </a>
-      </div>
-      <div class="card">
-        <a href="https://www.amazon.com/dp/B0FTSWVPXW?ref_=ast_author_dp_aw&amp;th=1&amp;psc=1&amp;dib=eyJ2IjoiMSJ9.Jm6c-F4-5WHfsSwRqss0Gzpsp_-7WbUFEz5wPYTdhEQC9Co_vsrbq2gQP8nv2H8SOCAhkwv9eDawbWbjGuTToA.5Zvx5oOBmG-C-UfPiFlwU2b7ZgINWm8QdDgUOqrf2yM&amp;dib_tag=AUTHOR" target="_blank" rel="noopener noreferrer">
-          <img class="book-img" src="images/cover-2.jpg" alt="Cover 2">
-        </a>
-      </div>
-      <div class="card">
-        <a href="https://www.amazon.com/dp/B0G1PYHBGB?ref_=ast_author_dp_aw&amp;th=1&amp;psc=1&amp;dib=eyJ2IjoiMSJ9.Jm6c-F4-5WHfsSwRqss0Gzpsp_-7WbUFEz5wPYTdhEQC9Co_vsrbq2gQP8nv2H8SOCAhkwv9eDawbWbjGuTToA.5Zvx5oOBmG-C-UfPiFlwU2b7ZgINWm8QdDgUOqrf2yM&amp;dib_tag=AUTHOR" target="_blank" rel="noopener noreferrer">
-          <img class="book-img" src="images/cover-3.jpg" alt="Cover 3">
-        </a>
-      </div>
-      <div class="card">
-        <a href="https://www.amazon.com/dp/B0GD7VVMLW?ref_=ast_author_dp_aw&amp;th=1&amp;psc=1&amp;dib=eyJ2IjoiMSJ9.Jm6c-F4-5WHfsSwRqss0Gzpsp_-7WbUFEz5wPYTdhEQC9Co_vsrbq2gQP8nv2H8SOCAhkwv9eDawbWbjGuTToA.5Zvx5oOBmG-C-UfPiFlwU2b7ZgINWm8QdDgUOqrf2yM&amp;dib_tag=AUTHOR" target="_blank" rel="noopener noreferrer">
-          <img class="book-img" src="images/cover-4.jpg" alt="Cover 4">
-        </a>
-      </div>
-      <div class="card">
-        <a href="https://www.amazon.com/dp/B0GXW2DGVW?ref_=ast_author_dp_aw&amp;th=1&amp;psc=1&amp;dib=eyJ2IjoiMSJ9.Jm6c-F4-5WHfsSwRqss0Gzpsp_-7WbUFEz5wPYTdhEQC9Co_vsrbq2gQP8nv2H8SOCAhkwv9eDawbWbjGuTToA.5Zvx5oOBmG-C-UfPiFlwU2b7ZgINWm8QdDgUOqrf2yM&amp;dib_tag=AUTHOR" target="_blank" rel="noopener noreferrer">
-          <img class="book-img" src="images/cover-5.jpg" alt="Cover 5">
-        </a>
-      </div>
-      <div class="card">
-        <a href="https://www.amazon.com/-/ko/stores/author/B0FS774RCD/about?ccs_id=d5100441-a16b-40dc-a50e-5c6a310c57ab" target="_blank" rel="noopener noreferrer">
-          <img class="book-img" src="images/cover-author.jpg" alt="Author">
-        </a>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <div class="qr-section">
-      <a href="https://www.amazon.com/stores/OK-PAEK/author/B0FS774RCD/allbooks?ccs_id=2ba74125-94b9-4c91-b716-9b1922841e83" target="_blank" rel="noopener noreferrer">
-        <img class="qr-img" src="images/qrcode.jpg" alt="QR Code">
-      </a>
-    </div>
-    <div class="footer-info">
-      <p>&copy; 2026. OK PAEK All Rights Reserved.</p>
-      <p><a href="mailto:okpaek.art@gmail.com">okpaek.art@gmail.com</a></p>
-    </div>
-  </footer>
+<header>
+<p class="welcome">Welcome to</p>
+<h1 class="brand-title">
+<span class="part-emoticon">Emoticon</span> <span class="part-city">City</span>
+</h1>
+<p class="sub-title">‘하루 한 문장’만 허용되는 도시, 이모티콘시티로 초대합니다!</p>
+<p class="author-sub-ko">오케이 백 〈이모티콘시티의 주민들〉 시리즈</p>
+<p class="author-sub-en">Residents of Emoticon City Series by OK PAEK</p>
+</header>
+<main>
+<div class="card-grid">
+<div class="card">
+<a href="https://www.amazon.com/dp/B0DHT5MKTQ?ref_=ast_author_dp_aw&amp;th=1&amp;psc=1&amp;dib=eyJ2IjoiMSJ9.Jm6c-F4-5WHfsSwRqss0Gzpsp_-7WbUFEz5wPYTdhEQC9Co_vsrbq2gQP8nv2H8SOCAhkwv9eDawbWbjGuTToA.5Zvx5oOBmG-C-UfPiFlwU2b7ZgINWm8QdDgUOqrf2yM&amp;dib_tag=AUTHOR" target="_blank" rel="noopener noreferrer">
+<img class="book-img" src="images/cover-1.jpg" alt="Cover 1">
+</a>
+</div>
+<div class="card">
+<a href="https://www.amazon.com/dp/B0FTSWVPXW?ref_=ast_author_dp_aw&amp;th=1&amp;psc=1&amp;dib=eyJ2IjoiMSJ9.Jm6c-F4-5WHfsSwRqss0Gzpsp_-7WbUFEz5wPYTdhEQC9Co_vsrbq2gQP8nv2H8SOCAhkwv9eDawbWbjGuTToA.5Zvx5oOBmG-C-UfPiFlwU2b7ZgINWm8QdDgUOqrf2yM&amp;dib_tag=AUTHOR" target="_blank" rel="noopener noreferrer">
+<img class="book-img" src="images/cover-2.jpg" alt="Cover 2">
+</a>
+</div>
+<div class="card">
+<a href="https://www.amazon.com/dp/B0G1PYHBGB?ref_=ast_author_dp_aw&amp;th=1&amp;psc=1&amp;dib=eyJ2IjoiMSJ9.Jm6c-F4-5WHfsSwRqss0Gzpsp_-7WbUFEz5wPYTdhEQC9Co_vsrbq2gQP8nv2H8SOCAhkwv9eDawbWbjGuTToA.5Zvx5oOBmG-C-UfPiFlwU2b7ZgINWm8QdDgUOqrf2yM&amp;dib_tag=AUTHOR" target="_blank" rel="noopener noreferrer">
+<img class="book-img" src="images/cover-3.jpg" alt="Cover 3">
+</a>
+</div>
+<div class="card">
+<a href="https://www.amazon.com/dp/B0GD7VVMLW?ref_=ast_author_dp_aw&amp;th=1&amp;psc=1&amp;dib=eyJ2IjoiMSJ9.Jm6c-F4-5WHfsSwRqss0Gzpsp_-7WbUFEz5wPYTdhEQC9Co_vsrbq2gQP8nv2H8SOCAhkwv9eDawbWbjGuTToA.5Zvx5oOBmG-C-UfPiFlwU2b7ZgINWm8QdDgUOqrf2yM&amp;dib_tag=AUTHOR" target="_blank" rel="noopener noreferrer">
+<img class="book-img" src="images/cover-4.jpg" alt="Cover 4">
+</a>
+</div>
+<div class="card">
+<a href="https://www.amazon.com/dp/B0GXW2DGVW?ref_=ast_author_dp_aw&amp;th=1&amp;psc=1&amp;dib=eyJ2IjoiMSJ9.Jm6c-F4-5WHfsSwRqss0Gzpsp_-7WbUFEz5wPYTdhEQC9Co_vsrbq2gQP8nv2H8SOCAhkwv9eDawbWbjGuTToA.5Zvx5oOBmG-C-UfPiFlwU2b7ZgINWm8QdDgUOqrf2yM&amp;dib_tag=AUTHOR" target="_blank" rel="noopener noreferrer">
+<img class="book-img" src="images/cover-5.jpg" alt="Cover 5">
+</a>
+</div>
+<div class="card">
+<a href="https://www.amazon.com/-/ko/stores/author/B0FS774RCD/about?ccs_id=d5100441-a16b-40dc-a50e-5c6a310c57ab" target="_blank" rel="noopener noreferrer">
+<img class="book-img" src="images/cover-author.jpg" alt="Author">
+</a>
+</div>
+</div>
+</main>
+<footer>
+<div class="qr-section">
+<a href="https://www.amazon.com/stores/OK-PAEK/author/B0FS774RCD/allbooks?ccs_id=2ba74125-94b9-4c91-b716-9b1922841e83" target="_blank" rel="noopener noreferrer">
+<img class="qr-img" src="images/qrcode.jpg" alt="QR Code">
+</a>
+</div>
+<div class="footer-info">
+<p>© 2026. OK PAEK All Rights Reserved.</p>
+<p><a href="mailto:okpaek.art@gmail.com">okpaek.art@gmail.com</a></p>
+</div>
+</footer>
 </body>
 </html>
