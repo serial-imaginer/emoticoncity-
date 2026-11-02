@@ -19,8 +19,8 @@
     header { text-align: center; margin-bottom: 45px; max-width: 800px; }
     .welcome { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; color: #ffffff; }
     .brand-title { font-size: 3.2rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -0.5px; line-height: 1.1; }
-    .part-emoticon { color: #10b981; }
-    .part-city { color: #a855f7; }
+    .part-emoticon { color: #7EFB4F; }
+    .part-city { color: #A133F5; }
     .sub-title { font-size: 1.2rem; color: #ffffff; font-weight: 600; margin-bottom: 24px; }
     .author-sub-ko { font-size: 0.95rem; color: #9ca3af; margin-bottom: 4px; font-weight: 700; }
     .author-sub-en { font-size: 0.95rem; color: #9ca3af; font-weight: 600; }
@@ -36,7 +36,16 @@
     }
     .card { display: flex; justify-content: center; align-items: center; }
     .card a { display: block; width: 100%; }
-    .book-img { width: 100%; height: auto; display: block; border-radius: 2px; }
+    .book-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 2px;
+      transition: transform 0.3s ease;
+    }
+    .book-img:hover {
+      transform: scale(1.1);
+    }
     footer {
       margin-top: auto;
       width: 100%;
@@ -49,7 +58,15 @@
       gap: 20px;
     }
     .qr-section { display: flex; justify-content: center; align-items: center; }
-    .qr-img { width: 120px; height: auto; display: block; }
+    .qr-img {
+      width: 120px;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .qr-img:hover {
+      transform: scale(1.1);
+    }
     .footer-info { text-align: center; font-size: 0.85rem; color: #6b7280; line-height: 1.6; }
     .footer-info a { color: #6b7280; text-decoration: none; }
   </style>
